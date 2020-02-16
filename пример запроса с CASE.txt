@@ -1,0 +1,8 @@
+SELECT id_o, price,
+  CASE WHEN price < 1000 THEN "1"
+       WHEN price >= 1000 AND price < 5000 THEN "2"
+  ELSE "3" end  AS m,
+  CASE WHEN TIMESTAMPDIFF(DAY,o_date,date('2018-01-01')) < 30 THEN "1"
+       WHEN TIMESTAMPDIFF(DAY,o_date,date('2018-01-01')) >= 30 AND TIMESTAMPDIFF(DAY,o_date,date('2018-01-01')) < 60 THEN "2"
+  ELSE "3" end  AS r
+  FROM orders_20190822;
