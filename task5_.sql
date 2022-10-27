@@ -99,4 +99,3 @@ WITH
 
   FROM USERGROUP
   GROUP BY GR*/
-    
